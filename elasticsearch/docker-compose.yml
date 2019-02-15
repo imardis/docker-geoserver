@@ -1,0 +1,11 @@
+version: '2'
+services:
+  geoserver:
+    build: .
+    image: geoserver-elasticgeo
+    container_name: geoserver-elasticgeo
+    volumes:
+      - "./data:/var/local/geoserver"
+    ports:
+      - "8080:8080"
+    restart: always

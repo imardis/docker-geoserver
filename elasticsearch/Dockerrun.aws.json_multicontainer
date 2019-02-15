@@ -1,0 +1,31 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "geoserver",
+      "image": "622950713627.dkr.ecr.eu-west-1.amazonaws.com/imardis/geoserver:latest",
+      "memoryReservation" : "512",
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "efs",
+          "containerPath": "/var/local/geoserver"
+        }
+      ]
+    }
+  ],
+  "volumes": [
+    {
+      "name": "efs",
+      "host": {
+        "sourcePath": "/efs"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,17 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "622950713627.dkr.ecr.eu-west-1.amazonaws.com/imardis/geoserver:latest"
+  },
+  "Ports": [{
+    "HostPort" : "80",
+    "ContainerPort": "8080"
+  }],
+  "Volumes": [
+    {
+      "HostDirectory": "/efs",
+      "ContainerDirectory": "/var/local/geoserver"
+    }
+  ]
+}
+
